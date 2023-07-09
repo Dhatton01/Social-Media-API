@@ -1,10 +1,12 @@
-const router = require('express').Router();
-const apiRoutes = require('./api/');
+// initialize variables and import required module
+const router = require('express').Router(),
+      apiRoutes = require('./api');
 
+// mount the apiRoutes middleware at the '/api' path
 router.use('/api', apiRoutes);
 
-router.use((req, res) => {
-    res.status(404).send('<h1> 404 Error!</h1>');
-})
+// handle any requests that don't match the defined routes
+router.use((req, res) => res.send('Incorrect route!'));
 
+// export the routes
 module.exports = router;
