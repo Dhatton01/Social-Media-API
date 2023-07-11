@@ -1,13 +1,20 @@
 {
-  "name": "social-media-api",
+  "name": "social-media-api-1",
   "version": "1.0.0",
-  "description": "A REST API for a social media app. Built with Express, Mongoose, and MongoDB.",
-  "main": "server.js",
+  "description": "Social network API",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed",
+    "heroku-postbuild": "node utils/seed.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
 }
